@@ -1,5 +1,6 @@
 from model.interfaces import DiscountStrategy
 
+
 class Order:
     """Representa un pedido y su lógica de cálculo base."""
 
@@ -17,7 +18,7 @@ class Order:
     def calculate_total(self) -> float:
         """Calcula el valor total de un pedido.
 
-        Aplica primero el descuento correspondiente según la estrategia definida 
+        Aplica primero el descuento correspondiente según la estrategia definida
         y posteriormente suma el impuesto definido en tax_rate.
 
         Returns:

@@ -1,4 +1,4 @@
-from model.interfaces import PaymentProcessor, OrderRepository, ReportGenerator
+from model.interfaces import OrderRepository, PaymentProcessor, ReportGenerator
 
 
 class CardPayment(PaymentProcessor):
