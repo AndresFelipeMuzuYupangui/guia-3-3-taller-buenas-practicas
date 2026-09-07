@@ -1,12 +1,18 @@
-from view.console_view import ConsoleView
+from model.interfaces import OrderRepository, PaymentProcessor, ReportGenerator
 from model.order import Order
-from model.interfaces import PaymentProcessor, OrderRepository, ReportGenerator
+from view.console_view import ConsoleView
+
 
 class OrderController:
     """Coordina el flujo del programa utilizando los modelos y la vista."""
 
-    def __init__(self, view: ConsoleView, payment_processor: PaymentProcessor,
-                 repository: OrderRepository, report_generator: ReportGenerator):
+    def __init__(
+        self,
+        view: ConsoleView,
+        payment_processor: PaymentProcessor,
+        repository: OrderRepository,
+        report_generator: ReportGenerator,
+    ):
         """Inicializa el controlador inyectando sus dependencias."""
         self.view = view
         self.payment_processor = payment_processor
@@ -16,7 +22,7 @@ class OrderController:
     def process_order(self, order: Order, order_id: str) -> None:
         """
         Ejecuta el flujo completo de un pedido.
-        
+
         Args:
             order (Order): Entidad del pedido.
             order_id (str): Identificador único del pedido.

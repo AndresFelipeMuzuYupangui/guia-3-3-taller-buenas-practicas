@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod
 
+
 class DiscountStrategy(ABC):
     """Define el contrato para las estrategias de descuento aplicables."""
-    
+
     @abstractmethod
     def apply_discount(self, total: float) -> float:
         """Aplica el descuento correspondiente al total parcial.
@@ -13,11 +14,11 @@ class DiscountStrategy(ABC):
         Returns:
             float: Valor total con el descuento restado.
         """
-        pass
+
 
 class PaymentProcessor(ABC):
     """Define el contrato para procesar transacciones de pago."""
-    
+
     @abstractmethod
     def process(self, amount: float) -> str:
         """Procesa el pago por el monto especificado.
@@ -28,11 +29,11 @@ class PaymentProcessor(ABC):
         Returns:
             str: Mensaje de confirmación del proceso de pago.
         """
-        pass
+
 
 class OrderRepository(ABC):
     """Define el contrato para la persistencia de pedidos en base de datos."""
-    
+
     @abstractmethod
     def save(self, order_id: str, order_data: dict) -> str:
         """Guarda la información del pedido en el almacenamiento.
@@ -44,11 +45,11 @@ class OrderRepository(ABC):
         Returns:
             str: Mensaje de confirmación de guardado.
         """
-        pass
+
 
 class ReportGenerator(ABC):
     """Define el contrato para generar reportes en distintos formatos."""
-    
+
     @abstractmethod
     def generate(self, order_data: dict) -> str:
         """Genera una representación del pedido.
@@ -59,4 +60,3 @@ class ReportGenerator(ABC):
         Returns:
             str: Reporte formateado como cadena de texto.
         """
-        pass
